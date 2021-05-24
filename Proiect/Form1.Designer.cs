@@ -34,6 +34,8 @@ namespace Proiect
             this.btnDelRes = new System.Windows.Forms.Button();
             this.lwAfisare = new System.Windows.Forms.ListView();
             this.btnViewRes = new System.Windows.Forms.Button();
+            this.btnAddClient = new System.Windows.Forms.Button();
+            this.btnAddFilm = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnMkRes
@@ -83,11 +85,33 @@ namespace Proiect
             this.btnViewRes.UseVisualStyleBackColor = true;
             this.btnViewRes.Click += new System.EventHandler(this.btnViewRes_Click);
             // 
+            // btnAddClient
+            // 
+            this.btnAddClient.Location = new System.Drawing.Point(13, 208);
+            this.btnAddClient.Name = "btnAddClient";
+            this.btnAddClient.Size = new System.Drawing.Size(110, 23);
+            this.btnAddClient.TabIndex = 5;
+            this.btnAddClient.Text = "AddClient";
+            this.btnAddClient.UseVisualStyleBackColor = true;
+            this.btnAddClient.Click += new System.EventHandler(this.btnAddClient_Click);
+            // 
+            // btnAddFilm
+            // 
+            this.btnAddFilm.Location = new System.Drawing.Point(13, 258);
+            this.btnAddFilm.Name = "btnAddFilm";
+            this.btnAddFilm.Size = new System.Drawing.Size(110, 23);
+            this.btnAddFilm.TabIndex = 6;
+            this.btnAddFilm.Text = "Add Film";
+            this.btnAddFilm.UseVisualStyleBackColor = true;
+            this.btnAddFilm.Click += new System.EventHandler(this.btnAddFilm_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(544, 599);
+            this.Controls.Add(this.btnAddFilm);
+            this.Controls.Add(this.btnAddClient);
             this.Controls.Add(this.btnViewRes);
             this.Controls.Add(this.lwAfisare);
             this.Controls.Add(this.btnDelRes);
@@ -106,6 +130,8 @@ namespace Proiect
         private System.Windows.Forms.Button btnDelRes;
         private System.Windows.Forms.ListView lwAfisare;
         private System.Windows.Forms.Button btnViewRes;
+        private System.Windows.Forms.Button btnAddClient;
+        private System.Windows.Forms.Button btnAddFilm;
     }
 }
 

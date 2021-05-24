@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Beta97\\Desktop\\Proiect\\Proiect\\Proiect.csproj": {}
+    "C:\\Users\\Beta97\\Desktop\\InchirieriCasete\\Proiect\\Proiect.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Beta97\\Desktop\\Proiect\\Proiect\\Proiect.csproj": {
+    "C:\\Users\\Beta97\\Desktop\\InchirieriCasete\\Proiect\\Proiect.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Beta97\\Desktop\\Proiect\\Proiect\\Proiect.csproj",
+        "projectUniqueName": "C:\\Users\\Beta97\\Desktop\\InchirieriCasete\\Proiect\\Proiect.csproj",
         "projectName": "Proiect",
-        "projectPath": "C:\\Users\\Beta97\\Desktop\\Proiect\\Proiect\\Proiect.csproj",
+        "projectPath": "C:\\Users\\Beta97\\Desktop\\InchirieriCasete\\Proiect\\Proiect.csproj",
         "packagesPath": "C:\\Users\\Beta97\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Beta97\\Desktop\\Proiect\\Proiect\\obj\\",
+        "outputPath": "C:\\Users\\Beta97\\Desktop\\InchirieriCasete\\Proiect\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Beta97\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -57,7 +57,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

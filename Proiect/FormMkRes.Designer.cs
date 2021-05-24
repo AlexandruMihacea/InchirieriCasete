@@ -193,6 +193,7 @@ namespace Proiect
             this.btnCancelOne.TabIndex = 17;
             this.btnCancelOne.Text = "Cancel";
             this.btnCancelOne.UseVisualStyleBackColor = true;
+            this.btnCancelOne.Click += new System.EventHandler(this.btnCancelOne_Click);
             // 
             // errorProvider1
             // 

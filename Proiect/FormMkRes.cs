@@ -67,9 +67,9 @@ namespace Proiect
                         Price = 10;
                        
                     }
-                    Filme f = new Filme(Movie);
-                    Inchirieri I = new Inchirieri(Time, f, c, Price);
-                    listaRezervari.Add(I);
+                    //Filme f = new Filme(Movie);
+                    //Inchirieri I = new Inchirieri(Time, f, c, Price);
+                   // listaRezervari.Add(I);
 
                 }
                 catch (Exception ex)
@@ -89,37 +89,42 @@ namespace Proiect
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (rb1.Checked == false && rb2.Checked == false && rb3.Checked == false)
-                    MessageBox.Show("Selectati timpul de inchiriere!");
-                else
-                          if (rb1.Checked)
-                {
-                    Time = 1;
-                    Price = 5;
-                    tbPrice.Text = Price.ToString();
-                }
-                else
-                          if (rb1.Checked)
-                {
-                    Time = 2;
-                    Price = 7;
-                    tbPrice.Text = Price.ToString();
-                }
-                else
-                          if (rb3.Checked)
-                {
-                    Time = 3;
-                    Price = 10;
-                    tbPrice.Text = Price.ToString();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //try
+            //{
+            //    if (rb1.Checked == false && rb2.Checked == false && rb3.Checked == false)
+            //        MessageBox.Show("Selectati timpul de inchiriere!");
+            //    else
+            //              if (rb1.Checked)
+            //    {
+            //        Time = 1;
+            //        Price = 5;
+            //        tbPrice.Text = Price.ToString();
+            //    }
+            //    else
+            //              if (rb2.Checked)
+            //    {
+            //        Time = 2;
+            //        Price = 7;
+            //        tbPrice.Text = Price.ToString();
+            //    }
+            //    else
+            //              if (rb3.Checked)
+            //    {
+            //        Time = 3;
+            //        Price = 10;
+            //        tbPrice.Text = Price.ToString();
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
             
+
+        }
+
+        private void btnCancelOne_Click(object sender, EventArgs e)
+        {
 
         }
     }

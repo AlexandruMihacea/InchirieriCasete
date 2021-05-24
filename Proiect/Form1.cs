@@ -34,6 +34,17 @@ namespace Proiect
             
         }
 
-      
+        private void btnAddClient_Click(object sender, EventArgs e)
+        {
+            //this.Hide();
+            FormMKClient formMKC = new FormMKClient();
+            formMKC.ShowDialog();
+        }
+
+        private void btnAddFilm_Click(object sender, EventArgs e)
+        {
+            FormMKFilm formMKF = new FormMKFilm();
+            formMKF.ShowDialog();
+        }
     }
 }

@@ -4,19 +4,26 @@ using System.Text;
 
 namespace Proiect.Entities
 {
+
+    [Serializable]
     public class Clienti
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public int Age { get; set; }
+        public int Telefon { get; set; }
         public string Email { get; set; }
 
 
-        public Clienti(string FirstName,string LastName,int Age,string Email)
+        public Clienti()
+        {
+
+        }
+
+        public Clienti(string FirstName,string LastName,int Telefon,string Email)
         {
             this.FirstName = FirstName;
             this.LastName = LastName;
-            this.Age = Age;
+            this.Telefon = Telefon;
             this.Email = Email;
         }
 
