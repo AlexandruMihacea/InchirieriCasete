@@ -216,5 +216,65 @@ namespace Proiect
         {
             errorProvider1.SetError(tbEmail, null);
         }
+
+        private void cmsDelete_Click(object sender, EventArgs e)
+        {
+            if (lvClienti.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Alege un Client !");
+                return;
+            }
+
+            if (MessageBox.Show(
+                "Esti sigur ca vrei sa stergi clientul ?",
+                "Delete client",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                ListViewItem listViewItem = lvClienti.SelectedItems[0];
+                Clienti clienti = (Clienti)listViewItem.Tag;
+                _clienti.Remove(clienti);
+                DisplayClienti();
+            }
+        }
+
+        private void cmsEdit_Click(object sender, EventArgs e)
+        {
+            if (lvClienti.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Alege un Client !");
+                return;
+            }
+
+            ListViewItem listViewItem = lvClienti.SelectedItems[0];
+            Clienti clienti = (Clienti)listViewItem.Tag;
+
+            EditClienti editClienti = new EditClienti(clienti);
+            if (editClienti.ShowDialog() == DialogResult.OK)
+                DisplayClienti();
+        }
+
+        private void cmsExport_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "CSV File | *.csv";
+            saveFileDialog.Title = "Export CSV";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                using (StreamWriter writer = File.CreateText(saveFileDialog.FileName))
+                {
+                    writer.WriteLine("\"Numele\", \"Prenumele\", \"Email\", \"Telefon\"");
+                    foreach (Clienti clienti in _clienti)
+                    {
+                        writer.WriteLine($"\"{clienti.LastName}\",\"{clienti.FirstName}\",{clienti.Email}\",\"{clienti.Telefon}");
+                    }
+                }
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

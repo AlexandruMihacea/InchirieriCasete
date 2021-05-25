@@ -29,6 +29,8 @@ namespace Proiect
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMKFilm));
             this.label1 = new System.Windows.Forms.Label();
             this.tbNumeFilm = new System.Windows.Forms.TextBox();
             this.tbDurataFilm = new System.Windows.Forms.TextBox();
@@ -41,6 +43,19 @@ namespace Proiect
             this.btnAddFilm = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmsEdit = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmsDelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmsExport = new System.Windows.Forms.ToolStripMenuItem();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.tsBySer = new System.Windows.Forms.ToolStripButton();
+            this.tsXMLSer = new System.Windows.Forms.ToolStripButton();
+            this.tsByDes = new System.Windows.Forms.ToolStripButton();
+            this.tsXMLDes = new System.Windows.Forms.ToolStripButton();
+            this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -58,6 +73,8 @@ namespace Proiect
             this.tbNumeFilm.Name = "tbNumeFilm";
             this.tbNumeFilm.Size = new System.Drawing.Size(100, 23);
             this.tbNumeFilm.TabIndex = 1;
+            this.tbNumeFilm.Validating += new System.ComponentModel.CancelEventHandler(this.tbNumeFilm_Validating);
+            this.tbNumeFilm.Validated += new System.EventHandler(this.tbNumeFilm_Validated);
             // 
             // tbDurataFilm
             // 
@@ -65,6 +82,8 @@ namespace Proiect
             this.tbDurataFilm.Name = "tbDurataFilm";
             this.tbDurataFilm.Size = new System.Drawing.Size(100, 23);
             this.tbDurataFilm.TabIndex = 2;
+            this.tbDurataFilm.Validating += new System.ComponentModel.CancelEventHandler(this.tbDurataFilm_Validating);
+            this.tbDurataFilm.Validated += new System.EventHandler(this.tbDurataFilm_Validated);
             // 
             // label2
             // 
@@ -118,6 +137,7 @@ namespace Proiect
             this.btnCancel.TabIndex = 6;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnAddFilm
             // 
@@ -125,7 +145,7 @@ namespace Proiect
             this.btnAddFilm.Name = "btnAddFilm";
             this.btnAddFilm.Size = new System.Drawing.Size(75, 23);
             this.btnAddFilm.TabIndex = 7;
-            this.btnAddFilm.Text = "Add";
+            this.btnAddFilm.Text = "&Add";
             this.btnAddFilm.UseVisualStyleBackColor = true;
             this.btnAddFilm.Click += new System.EventHandler(this.btnAddFilm_Click);
             // 
@@ -149,11 +169,100 @@ namespace Proiect
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmsEdit,
+            this.cmsDelete,
+            this.cmsExport});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(109, 70);
+            // 
+            // cmsEdit
+            // 
+            this.cmsEdit.Name = "cmsEdit";
+            this.cmsEdit.Size = new System.Drawing.Size(108, 22);
+            this.cmsEdit.Text = "Edit";
+            this.cmsEdit.Click += new System.EventHandler(this.cmsEdit_Click);
+            // 
+            // cmsDelete
+            // 
+            this.cmsDelete.Name = "cmsDelete";
+            this.cmsDelete.Size = new System.Drawing.Size(108, 22);
+            this.cmsDelete.Text = "Delete";
+            this.cmsDelete.Click += new System.EventHandler(this.cmsDelete_Click);
+            // 
+            // cmsExport
+            // 
+            this.cmsExport.Name = "cmsExport";
+            this.cmsExport.Size = new System.Drawing.Size(108, 22);
+            this.cmsExport.Text = "Export";
+            this.cmsExport.Click += new System.EventHandler(this.cmsExport_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsBySer,
+            this.tsXMLSer,
+            this.tsByDes,
+            this.tsXMLDes});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(600, 25);
+            this.toolStrip1.TabIndex = 10;
+            this.toolStrip1.Text = "toolStrip1";
+            // 
+            // tsBySer
+            // 
+            this.tsBySer.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsBySer.Image = ((System.Drawing.Image)(resources.GetObject("tsBySer.Image")));
+            this.tsBySer.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsBySer.Name = "tsBySer";
+            this.tsBySer.Size = new System.Drawing.Size(23, 22);
+            this.tsBySer.Text = "Binary Serializare";
+            this.tsBySer.Click += new System.EventHandler(this.tsBySer_Click);
+            // 
+            // tsXMLSer
+            // 
+            this.tsXMLSer.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsXMLSer.Image = ((System.Drawing.Image)(resources.GetObject("tsXMLSer.Image")));
+            this.tsXMLSer.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsXMLSer.Name = "tsXMLSer";
+            this.tsXMLSer.Size = new System.Drawing.Size(23, 22);
+            this.tsXMLSer.Text = "XML Serializare";
+            this.tsXMLSer.Click += new System.EventHandler(this.tsXMLSer_Click);
+            // 
+            // tsByDes
+            // 
+            this.tsByDes.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsByDes.Image = ((System.Drawing.Image)(resources.GetObject("tsByDes.Image")));
+            this.tsByDes.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsByDes.Name = "tsByDes";
+            this.tsByDes.Size = new System.Drawing.Size(23, 22);
+            this.tsByDes.Text = "Binary Deserializare";
+            this.tsByDes.Click += new System.EventHandler(this.tsByDes_Click);
+            // 
+            // tsXMLDes
+            // 
+            this.tsXMLDes.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tsXMLDes.Image = ((System.Drawing.Image)(resources.GetObject("tsXMLDes.Image")));
+            this.tsXMLDes.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tsXMLDes.Name = "tsXMLDes";
+            this.tsXMLDes.Size = new System.Drawing.Size(23, 22);
+            this.tsXMLDes.Text = "XML Deserializare";
+            this.tsXMLDes.Click += new System.EventHandler(this.tsXMLDes_Click);
+            // 
             // FormMKFilm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 291);
+            this.ContextMenuStrip = this.contextMenuStrip1;
+            this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAddFilm);
@@ -166,6 +275,10 @@ namespace Proiect
             this.Controls.Add(this.label1);
             this.Name = "FormMKFilm";
             this.Text = "FormMKFilm";
+            this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -185,5 +298,15 @@ namespace Proiect
         private System.Windows.Forms.ColumnHeader Durata;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem cmsEdit;
+        private System.Windows.Forms.ToolStripMenuItem cmsDelete;
+        private System.Windows.Forms.ToolStripMenuItem cmsExport;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton tsBySer;
+        private System.Windows.Forms.ToolStripButton tsXMLSer;
+        private System.Windows.Forms.ToolStripButton tsByDes;
+        private System.Windows.Forms.ToolStripButton tsXMLDes;
     }
 }

@@ -58,8 +58,13 @@ namespace Proiect
             this.btnStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.btnExport = new System.Windows.Forms.ToolStripMenuItem();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cmsEdit = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmsDelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.cmsExport = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -77,7 +82,7 @@ namespace Proiect
             this.btnAddClient.Name = "btnAddClient";
             this.btnAddClient.Size = new System.Drawing.Size(75, 23);
             this.btnAddClient.TabIndex = 1;
-            this.btnAddClient.Text = "Add";
+            this.btnAddClient.Text = "&Add";
             this.btnAddClient.UseVisualStyleBackColor = true;
             this.btnAddClient.Click += new System.EventHandler(this.btnAddClient_Click);
             // 
@@ -87,8 +92,9 @@ namespace Proiect
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 4;
-            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // tbNume
             // 
@@ -292,12 +298,42 @@ namespace Proiect
             // 
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(108, 22);
-            this.btnExport.Text = "Export";
+            this.btnExport.Text = "&Export";
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cmsEdit,
+            this.cmsDelete,
+            this.cmsExport});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(109, 70);
+            // 
+            // cmsEdit
+            // 
+            this.cmsEdit.Name = "cmsEdit";
+            this.cmsEdit.Size = new System.Drawing.Size(108, 22);
+            this.cmsEdit.Text = "Edit";
+            this.cmsEdit.Click += new System.EventHandler(this.cmsEdit_Click);
+            // 
+            // cmsDelete
+            // 
+            this.cmsDelete.Name = "cmsDelete";
+            this.cmsDelete.Size = new System.Drawing.Size(108, 22);
+            this.cmsDelete.Text = "Delete";
+            this.cmsDelete.Click += new System.EventHandler(this.cmsDelete_Click);
+            // 
+            // cmsExport
+            // 
+            this.cmsExport.Name = "cmsExport";
+            this.cmsExport.Size = new System.Drawing.Size(108, 22);
+            this.cmsExport.Text = "Export";
+            this.cmsExport.Click += new System.EventHandler(this.cmsExport_Click);
             // 
             // FormMKClient
             // 
@@ -324,6 +360,7 @@ namespace Proiect
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -360,5 +397,9 @@ namespace Proiect
         private System.Windows.Forms.ToolStripMenuItem btnStrip;
         private System.Windows.Forms.ToolStripMenuItem btnExport;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem cmsEdit;
+        private System.Windows.Forms.ToolStripMenuItem cmsDelete;
+        private System.Windows.Forms.ToolStripMenuItem cmsExport;
     }
 }

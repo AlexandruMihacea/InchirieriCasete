@@ -5,7 +5,8 @@ using System.Text;
 
 namespace Proiect.Entities
 {
-   public class Filme
+    [Serializable]
+    public class Filme
     {
         public string Nume { get; set; }
         public int Durata { get; set; }
