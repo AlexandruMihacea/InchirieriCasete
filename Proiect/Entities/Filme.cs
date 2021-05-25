@@ -11,6 +11,10 @@ namespace Proiect.Entities
         public string Nume { get; set; }
         public int Durata { get; set; }
 
+        public Filme(string Nume)
+        {
+            this.Nume = Nume;
+        }
 
         public Filme(string Nume, int Durata)
         {

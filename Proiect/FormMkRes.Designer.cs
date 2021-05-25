@@ -30,14 +30,6 @@ namespace Proiect
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.tbFName = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbLName = new System.Windows.Forms.TextBox();
-            this.tbEmail = new System.Windows.Forms.TextBox();
-            this.tbAge = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.cbMovie = new System.Windows.Forms.ComboBox();
@@ -52,78 +44,17 @@ namespace Proiect
             this.rb2 = new System.Windows.Forms.RadioButton();
             this.rb1 = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
+            this.cbClienti = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lwRes = new System.Windows.Forms.ListView();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tbFName
-            // 
-            this.tbFName.Location = new System.Drawing.Point(149, 87);
-            this.tbFName.Name = "tbFName";
-            this.tbFName.Size = new System.Drawing.Size(100, 23);
-            this.tbFName.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(50, 94);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 15);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Fisrt Name";
-            // 
-            // tbLName
-            // 
-            this.tbLName.Location = new System.Drawing.Point(149, 142);
-            this.tbLName.Name = "tbLName";
-            this.tbLName.Size = new System.Drawing.Size(100, 23);
-            this.tbLName.TabIndex = 2;
-            // 
-            // tbEmail
-            // 
-            this.tbEmail.Location = new System.Drawing.Point(149, 202);
-            this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(100, 23);
-            this.tbEmail.TabIndex = 3;
-            // 
-            // tbAge
-            // 
-            this.tbAge.Location = new System.Drawing.Point(149, 271);
-            this.tbAge.Name = "tbAge";
-            this.tbAge.Size = new System.Drawing.Size(100, 23);
-            this.tbAge.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(50, 149);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 15);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Lasdt Name";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(50, 209);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 15);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Email";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(50, 278);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(28, 15);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Age";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(122, 37);
+            this.label5.Location = new System.Drawing.Point(121, 37);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(38, 15);
             this.label5.TabIndex = 8;
@@ -141,32 +72,30 @@ namespace Proiect
             // cbMovie
             // 
             this.cbMovie.FormattingEnabled = true;
-            this.cbMovie.Items.AddRange(new object[] {
-            "Joker",
-            "SpiderMan",
-            "BatMan"});
             this.cbMovie.Location = new System.Drawing.Point(486, 87);
             this.cbMovie.Name = "cbMovie";
             this.cbMovie.Size = new System.Drawing.Size(121, 23);
             this.cbMovie.TabIndex = 10;
+            this.cbMovie.Text = "Filme";
+            this.cbMovie.SelectionChangeCommitted += new System.EventHandler(this.cbMovie_SelectionChangeCommitted);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(359, 94);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(86, 15);
+            this.label7.Size = new System.Drawing.Size(78, 15);
             this.label7.TabIndex = 11;
-            this.label7.Text = "Choce a Movie";
+            this.label7.Text = "Alege un film";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(359, 149);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(102, 15);
+            this.label8.Size = new System.Drawing.Size(53, 15);
             this.label8.TabIndex = 12;
-            this.label8.Text = "How Many Weeks";
+            this.label8.Text = "Cat timp";
             // 
             // tbPrice
             // 
@@ -250,15 +179,46 @@ namespace Proiect
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(129, 23);
             this.button1.TabIndex = 19;
-            this.button1.Text = "Calculate The Price";
+            this.button1.Text = "Calculeaza pretul";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // cbClienti
+            // 
+            this.cbClienti.FormattingEnabled = true;
+            this.cbClienti.Location = new System.Drawing.Point(98, 86);
+            this.cbClienti.Name = "cbClienti";
+            this.cbClienti.Size = new System.Drawing.Size(121, 23);
+            this.cbClienti.TabIndex = 20;
+            this.cbClienti.Text = "Clienti";
+            this.cbClienti.SelectionChangeCommitted += new System.EventHandler(this.cbClienti_SelectionChangeCommitted);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(1, 89);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(91, 15);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Alege un  Client";
+            // 
+            // lwRes
+            // 
+            this.lwRes.HideSelection = false;
+            this.lwRes.Location = new System.Drawing.Point(30, 145);
+            this.lwRes.Name = "lwRes";
+            this.lwRes.Size = new System.Drawing.Size(278, 298);
+            this.lwRes.TabIndex = 22;
+            this.lwRes.UseCompatibleStateImageBehavior = false;
             // 
             // FormMkRes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(755, 561);
+            this.Controls.Add(this.lwRes);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cbClienti);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnCancelOne);
@@ -269,16 +229,9 @@ namespace Proiect
             this.Controls.Add(this.cbMovie);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.tbAge);
-            this.Controls.Add(this.tbEmail);
-            this.Controls.Add(this.tbLName);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.tbFName);
             this.Name = "FormMkRes";
             this.Text = "\\";
+            this.Load += new System.EventHandler(this.FormMkRes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -288,15 +241,6 @@ namespace Proiect
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox tbFName;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tbLName;
-        private System.Windows.Forms.TextBox tbEmail;
-        private System.Windows.Forms.TextBox tbAge;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cbMovie;
@@ -311,5 +255,8 @@ namespace Proiect
         private System.Windows.Forms.RadioButton rb2;
         private System.Windows.Forms.RadioButton rb1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cbClienti;
+        private System.Windows.Forms.ListView lwRes;
+        private System.Windows.Forms.Label label1;
     }
 }

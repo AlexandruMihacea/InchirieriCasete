@@ -20,7 +20,6 @@ C:\Users\Beta97\Desktop\InchirieriCasete\Proiect\bin\Debug\netcoreapp3.1\Proiect
 C:\Users\Beta97\Desktop\InchirieriCasete\Proiect\bin\Debug\netcoreapp3.1\Proiect.runtimeconfig.dev.json
 C:\Users\Beta97\Desktop\InchirieriCasete\Proiect\bin\Debug\netcoreapp3.1\Proiect.dll
 C:\Users\Beta97\Desktop\InchirieriCasete\Proiect\bin\Debug\netcoreapp3.1\Proiect.pdb
-C:\Users\Beta97\Desktop\InchirieriCasete\Proiect\obj\Debug\netcoreapp3.1\Proiect.csprojAssemblyReference.cache
 C:\Users\Beta97\Desktop\InchirieriCasete\Proiect\obj\Debug\netcoreapp3.1\Proiect.Form1.resources
 C:\Users\Beta97\Desktop\InchirieriCasete\Proiect\obj\Debug\netcoreapp3.1\Proiect.FormMkRes.resources
 C:\Users\Beta97\Desktop\InchirieriCasete\Proiect\obj\Debug\netcoreapp3.1\Proiect.csproj.GenerateResource.cache
@@ -35,3 +34,12 @@ C:\Users\Beta97\Desktop\InchirieriCasete\Proiect\obj\Debug\netcoreapp3.1\Proiect
 C:\Users\Beta97\Desktop\InchirieriCasete\Proiect\obj\Debug\netcoreapp3.1\Proiect.EditClienti.resources
 C:\Users\Beta97\Desktop\InchirieriCasete\Proiect\obj\Debug\netcoreapp3.1\Proiect.FormMKFilm.resources
 C:\Users\Beta97\Desktop\InchirieriCasete\Proiect\obj\Debug\netcoreapp3.1\Proiect.EditFilm.resources
+C:\Users\Beta97\Desktop\InchirieriCasete\Proiect\bin\Debug\netcoreapp3.1\System.Data.SQLite.dll
+C:\Users\Beta97\Desktop\InchirieriCasete\Proiect\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\SQLite.Interop.dll
+C:\Users\Beta97\Desktop\InchirieriCasete\Proiect\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\SQLite.Interop.dll
+C:\Users\Beta97\Desktop\InchirieriCasete\Proiect\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\SQLite.Interop.dll
+C:\Users\Beta97\Desktop\InchirieriCasete\Proiect\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\SQLite.Interop.dll
+C:\Users\Beta97\Desktop\InchirieriCasete\Proiect\obj\Debug\netcoreapp3.1\Proiect.csproj.CopyComplete
+C:\Users\Beta97\Desktop\InchirieriCasete\Proiect\bin\Debug\netcoreapp3.1\database.db
+C:\Users\Beta97\Desktop\InchirieriCasete\Proiect\obj\Debug\netcoreapp3.1\Proiect.csprojAssemblyReference.cache
+C:\Users\Beta97\Desktop\InchirieriCasete\Proiect\obj\Debug\netcoreapp3.1\Proiect.Properties.Resources.resources

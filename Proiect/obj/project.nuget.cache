@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "nHNITgaLt9RfUcFkigOZohAaqRYZWTAEb9mvXqgz3YIy4dd0Hhm77qTs1+dBMgbnNzeJo0uOsNyeNvqB8JaSDQ==",
+  "dgSpecHash": "4b1mJ0ShpiQi0X9kWAG4HXO1cTqxnp7FM552wTzuKf1JNPd6/AXpJm/21eOzPukzsj72ZwxoFUeDCUNpvJSWRA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Beta97\\Desktop\\InchirieriCasete\\Proiect\\Proiect.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Beta97\\.nuget\\packages\\stub.system.data.sqlite.core.netstandard\\1.0.113.2\\stub.system.data.sqlite.core.netstandard.1.0.113.2.nupkg.sha512",
+    "C:\\Users\\Beta97\\.nuget\\packages\\system.data.sqlite.core\\1.0.113.7\\system.data.sqlite.core.1.0.113.7.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -30,6 +30,7 @@ namespace Proiect
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMKClient));
             this.label1 = new System.Windows.Forms.Label();
             this.btnAddClient = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -57,11 +58,18 @@ namespace Proiect
             this.btnXMLDeserializare = new System.Windows.Forms.ToolStripMenuItem();
             this.btnStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.btnExport = new System.Windows.Forms.ToolStripMenuItem();
+            this.File = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnPrint = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnPrintPrview = new System.Windows.Forms.ToolStripMenuItem();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cmsEdit = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsExport = new System.Windows.Forms.ToolStripMenuItem();
+            this.printDocument = new System.Drawing.Printing.PrintDocument();
+            this.pageSetupDialog = new System.Windows.Forms.PageSetupDialog();
+            this.printDialog = new System.Windows.Forms.PrintDialog();
+            this.printPreviewDialog = new System.Windows.Forms.PrintPreviewDialog();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -137,18 +145,18 @@ namespace Proiect
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(13, 94);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 15);
+            this.label2.Size = new System.Drawing.Size(55, 15);
             this.label2.TabIndex = 9;
-            this.label2.Text = "Nume";
+            this.label2.Text = "Prenume";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(13, 158);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 15);
+            this.label3.Size = new System.Drawing.Size(40, 15);
             this.label3.TabIndex = 10;
-            this.label3.Text = "Prenume";
+            this.label3.Text = "Nume";
             // 
             // label4
             // 
@@ -233,7 +241,8 @@ namespace Proiect
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.Binary,
             this.XML,
-            this.btnStrip});
+            this.btnStrip,
+            this.File});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -301,6 +310,29 @@ namespace Proiect
             this.btnExport.Text = "&Export";
             this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
             // 
+            // File
+            // 
+            this.File.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnPrint,
+            this.btnPrintPrview});
+            this.File.Name = "File";
+            this.File.Size = new System.Drawing.Size(37, 20);
+            this.File.Text = "File";
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(143, 22);
+            this.btnPrint.Text = "btnPrint";
+            this.btnPrint.Click += new System.EventHandler(this.btnPrint_Click);
+            // 
+            // btnPrintPrview
+            // 
+            this.btnPrintPrview.Name = "btnPrintPrview";
+            this.btnPrintPrview.Size = new System.Drawing.Size(143, 22);
+            this.btnPrintPrview.Text = "tsPrintPrview";
+            this.btnPrintPrview.Click += new System.EventHandler(this.btnPrintPrview_Click);
+            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
@@ -334,6 +366,32 @@ namespace Proiect
             this.cmsExport.Size = new System.Drawing.Size(108, 22);
             this.cmsExport.Text = "Export";
             this.cmsExport.Click += new System.EventHandler(this.cmsExport_Click);
+            // 
+            // printDocument
+            // 
+            this.printDocument.BeginPrint += new System.Drawing.Printing.PrintEventHandler(this.printDocument_BeginPrint);
+            this.printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument_PrintPage);
+            // 
+            // pageSetupDialog
+            // 
+            this.pageSetupDialog.Document = this.printDocument;
+            this.pageSetupDialog.HelpRequest += new System.EventHandler(this.pageSetupDialog_HelpRequest);
+            // 
+            // printDialog
+            // 
+            this.printDialog.Document = this.printDocument;
+            this.printDialog.UseEXDialog = true;
+            // 
+            // printPreviewDialog
+            // 
+            this.printPreviewDialog.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog.Document = this.printDocument;
+            this.printPreviewDialog.Enabled = true;
+            this.printPreviewDialog.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog.Icon")));
+            this.printPreviewDialog.Name = "printPreviewDialog";
+            this.printPreviewDialog.Visible = false;
             // 
             // FormMKClient
             // 
@@ -401,5 +459,14 @@ namespace Proiect
         private System.Windows.Forms.ToolStripMenuItem cmsEdit;
         private System.Windows.Forms.ToolStripMenuItem cmsDelete;
         private System.Windows.Forms.ToolStripMenuItem cmsExport;
+        private System.Windows.Forms.ToolStripMenuItem File;
+        private System.Drawing.Printing.PrintDocument printDocument;
+        private System.Windows.Forms.PageSetupDialog pageSetupDialog;
+        private System.Windows.Forms.ToolStripMenuItem tsPrint;
+        private System.Windows.Forms.ToolStripMenuItem tsPrintPrview;
+        private System.Windows.Forms.ToolStripMenuItem btnPrint;
+        private System.Windows.Forms.ToolStripMenuItem btnPrintPrview;
+        private System.Windows.Forms.PrintDialog printDialog;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog;
     }
 }

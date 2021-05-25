@@ -14,23 +14,24 @@ namespace Proiect
 {
     public partial class FormMKFilm : Form
     {
-        private List<Filme> _filme;
-        public FormMKFilm()
+        private List<Filme> _filme ;
+
+        public FormMKFilm(List<Filme> film2)
         {
             InitializeComponent();
-            _filme = new List<Filme>();
+            _filme = film2;
         }
 
         public void DisplayFilme()
         {
             lvFilme.Items.Clear();
 
-            foreach (Filme filme in _filme)
+            foreach (Filme filme2 in _filme)
             {
-                var listViewItem = new ListViewItem(filme.Nume);
-                listViewItem.SubItems.Add(filme.Durata.ToString());
+                var listViewItem = new ListViewItem(filme2.Nume);
+                listViewItem.SubItems.Add(filme2.Durata.ToString());
 
-                listViewItem.Tag = filme;
+                listViewItem.Tag = filme2;
 
                 lvFilme.Items.Add(listViewItem);
             }
@@ -41,9 +42,11 @@ namespace Proiect
             string nume = tbNumeFilm.Text;
             string durata = tbDurataFilm.Text;
 
-            var filme = new Filme(nume, int.Parse(durata));
-            _filme.Add(filme);
+            var filme2 = new Filme(nume, int.Parse(durata));
+            _filme.Add(filme2);
             DisplayFilme();
+
+
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -56,9 +59,9 @@ namespace Proiect
 
             ListViewItem listViewItem = lvFilme.SelectedItems[0];
 
-            Filme filme = (Filme)listViewItem.Tag;
+            Filme filme2 = (Filme)listViewItem.Tag;
 
-            EditFilm editFilme = new EditFilm(filme);
+            EditFilm editFilme = new EditFilm(filme2);
             if (editFilme.ShowDialog() == DialogResult.OK)
                 DisplayFilme();
         }
@@ -78,8 +81,8 @@ namespace Proiect
                 MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 ListViewItem listViewItem = lvFilme.SelectedItems[0];
-                Filme filme = (Filme)listViewItem.Tag;
-                _filme.Remove(filme);
+                Filme filme2 = (Filme)listViewItem.Tag;
+                _filme.Remove(filme2);
                 DisplayFilme();
             }
         }
@@ -100,8 +103,8 @@ namespace Proiect
                 MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 ListViewItem listViewItem = lvFilme.SelectedItems[0];
-                Filme filme = (Filme)listViewItem.Tag;
-                _filme.Remove(filme);
+                Filme filme2 = (Filme)listViewItem.Tag;
+                _filme.Remove(filme2);
                 DisplayFilme();
             }
         }
@@ -116,9 +119,9 @@ namespace Proiect
 
             ListViewItem listViewItem = lvFilme.SelectedItems[0];
 
-            Filme filme = (Filme)listViewItem.Tag;
+            Filme filme2 = (Filme)listViewItem.Tag;
 
-            EditFilm editFilme = new EditFilm(filme);
+            EditFilm editFilme = new EditFilm(filme2);
             if (editFilme.ShowDialog() == DialogResult.OK)
                 DisplayFilme();
 
@@ -134,9 +137,9 @@ namespace Proiect
                 using (StreamWriter writer = File.CreateText(saveFileDialog.FileName))
                 {
                     writer.WriteLine("\"Numele Film\", \"Durata\"");
-                    foreach (Filme filme in _filme)
+                    foreach (Filme filme2 in _filme)
                     {
-                        writer.WriteLine($"\"{filme.Nume}\",\"{filme.Durata}");
+                        writer.WriteLine($"\"{filme2.Nume}\",\"{filme2.Durata}");
                     }
                 }
             }
@@ -213,6 +216,40 @@ namespace Proiect
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            Clipboard.SetText(tbNumeFilm.Text);
+        }
+
+        private void btnPaste_Click(object sender, EventArgs e)
+        {
+            if (Clipboard.ContainsText())
+            {
+                tbNumeFilm.Text = Clipboard.GetText();
+            }
+        }
+
+        private void tbNumeFilm_DragDrop(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.Text, true))
+            {
+                tbNumeFilm.Text = (string)e.Data.GetData(DataFormats.Text);
+            }
+        }
+
+        private void tbNumeFilm_MouseDown(object sender, MouseEventArgs e)
+        {
+            tbNumeFilm.DoDragDrop(tbNumeFilm.Text, DragDropEffects.All);
+        }
+
+        private void tbNumeFilm_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.Text, true))
+            {
+                e.Effect = DragDropEffects.Copy;
+            }
         }
     }
 }

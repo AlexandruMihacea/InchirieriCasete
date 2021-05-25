@@ -29,79 +29,48 @@ namespace Proiect
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnMkRes = new System.Windows.Forms.Button();
-            this.btnEditRes = new System.Windows.Forms.Button();
-            this.btnDelRes = new System.Windows.Forms.Button();
-            this.lwAfisare = new System.Windows.Forms.ListView();
-            this.btnViewRes = new System.Windows.Forms.Button();
             this.btnAddClient = new System.Windows.Forms.Button();
             this.btnAddFilm = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnMkRes
             // 
-            this.btnMkRes.Location = new System.Drawing.Point(13, 111);
+            this.btnMkRes.Image = ((System.Drawing.Image)(resources.GetObject("btnMkRes.Image")));
+            this.btnMkRes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMkRes.Location = new System.Drawing.Point(195, 75);
             this.btnMkRes.Name = "btnMkRes";
-            this.btnMkRes.Size = new System.Drawing.Size(110, 23);
+            this.btnMkRes.Size = new System.Drawing.Size(144, 53);
             this.btnMkRes.TabIndex = 0;
             this.btnMkRes.Text = "Make Reservation";
+            this.btnMkRes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnMkRes.UseVisualStyleBackColor = true;
             this.btnMkRes.Click += new System.EventHandler(this.btnMkRes_Click);
             // 
-            // btnEditRes
-            // 
-            this.btnEditRes.Location = new System.Drawing.Point(12, 373);
-            this.btnEditRes.Name = "btnEditRes";
-            this.btnEditRes.Size = new System.Drawing.Size(110, 23);
-            this.btnEditRes.TabIndex = 1;
-            this.btnEditRes.Text = "Edit Reservation";
-            this.btnEditRes.UseVisualStyleBackColor = true;
-            // 
-            // btnDelRes
-            // 
-            this.btnDelRes.Location = new System.Drawing.Point(12, 418);
-            this.btnDelRes.Name = "btnDelRes";
-            this.btnDelRes.Size = new System.Drawing.Size(110, 23);
-            this.btnDelRes.TabIndex = 2;
-            this.btnDelRes.Text = "Delete Reservation";
-            this.btnDelRes.UseVisualStyleBackColor = true;
-            // 
-            // lwAfisare
-            // 
-            this.lwAfisare.HideSelection = false;
-            this.lwAfisare.Location = new System.Drawing.Point(177, 111);
-            this.lwAfisare.Name = "lwAfisare";
-            this.lwAfisare.Size = new System.Drawing.Size(355, 330);
-            this.lwAfisare.TabIndex = 3;
-            this.lwAfisare.UseCompatibleStateImageBehavior = false;
-            // 
-            // btnViewRes
-            // 
-            this.btnViewRes.Location = new System.Drawing.Point(13, 161);
-            this.btnViewRes.Name = "btnViewRes";
-            this.btnViewRes.Size = new System.Drawing.Size(110, 23);
-            this.btnViewRes.TabIndex = 4;
-            this.btnViewRes.Text = "View Reservation";
-            this.btnViewRes.UseVisualStyleBackColor = true;
-            this.btnViewRes.Click += new System.EventHandler(this.btnViewRes_Click);
-            // 
             // btnAddClient
             // 
-            this.btnAddClient.Location = new System.Drawing.Point(13, 208);
+            this.btnAddClient.Image = ((System.Drawing.Image)(resources.GetObject("btnAddClient.Image")));
+            this.btnAddClient.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddClient.Location = new System.Drawing.Point(12, 29);
             this.btnAddClient.Name = "btnAddClient";
-            this.btnAddClient.Size = new System.Drawing.Size(110, 23);
+            this.btnAddClient.Size = new System.Drawing.Size(110, 41);
             this.btnAddClient.TabIndex = 5;
             this.btnAddClient.Text = "AddClient";
+            this.btnAddClient.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddClient.UseVisualStyleBackColor = true;
             this.btnAddClient.Click += new System.EventHandler(this.btnAddClient_Click);
             // 
             // btnAddFilm
             // 
-            this.btnAddFilm.Location = new System.Drawing.Point(13, 258);
+            this.btnAddFilm.Image = ((System.Drawing.Image)(resources.GetObject("btnAddFilm.Image")));
+            this.btnAddFilm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAddFilm.Location = new System.Drawing.Point(12, 145);
             this.btnAddFilm.Name = "btnAddFilm";
-            this.btnAddFilm.Size = new System.Drawing.Size(110, 23);
+            this.btnAddFilm.Size = new System.Drawing.Size(110, 42);
             this.btnAddFilm.TabIndex = 6;
             this.btnAddFilm.Text = "Add Film";
+            this.btnAddFilm.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddFilm.UseVisualStyleBackColor = true;
             this.btnAddFilm.Click += new System.EventHandler(this.btnAddFilm_Click);
             // 
@@ -109,13 +78,9 @@ namespace Proiect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(544, 599);
+            this.ClientSize = new System.Drawing.Size(386, 228);
             this.Controls.Add(this.btnAddFilm);
             this.Controls.Add(this.btnAddClient);
-            this.Controls.Add(this.btnViewRes);
-            this.Controls.Add(this.lwAfisare);
-            this.Controls.Add(this.btnDelRes);
-            this.Controls.Add(this.btnEditRes);
             this.Controls.Add(this.btnMkRes);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -126,10 +91,6 @@ namespace Proiect
         #endregion
 
         private System.Windows.Forms.Button btnMkRes;
-        private System.Windows.Forms.Button btnEditRes;
-        private System.Windows.Forms.Button btnDelRes;
-        private System.Windows.Forms.ListView lwAfisare;
-        private System.Windows.Forms.Button btnViewRes;
         private System.Windows.Forms.Button btnAddClient;
         private System.Windows.Forms.Button btnAddFilm;
     }

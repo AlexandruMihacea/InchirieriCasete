@@ -53,6 +53,8 @@ namespace Proiect
             this.tsXMLSer = new System.Windows.Forms.ToolStripButton();
             this.tsByDes = new System.Windows.Forms.ToolStripButton();
             this.tsXMLDes = new System.Windows.Forms.ToolStripButton();
+            this.btnCopy = new System.Windows.Forms.Button();
+            this.btnPaste = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.toolStrip1.SuspendLayout();
@@ -73,6 +75,9 @@ namespace Proiect
             this.tbNumeFilm.Name = "tbNumeFilm";
             this.tbNumeFilm.Size = new System.Drawing.Size(100, 23);
             this.tbNumeFilm.TabIndex = 1;
+            this.tbNumeFilm.DragDrop += new System.Windows.Forms.DragEventHandler(this.tbNumeFilm_DragDrop);
+            this.tbNumeFilm.DragEnter += new System.Windows.Forms.DragEventHandler(this.tbNumeFilm_DragEnter);
+            this.tbNumeFilm.MouseDown += new System.Windows.Forms.MouseEventHandler(this.tbNumeFilm_MouseDown);
             this.tbNumeFilm.Validating += new System.ComponentModel.CancelEventHandler(this.tbNumeFilm_Validating);
             this.tbNumeFilm.Validated += new System.EventHandler(this.tbNumeFilm_Validated);
             // 
@@ -256,12 +261,34 @@ namespace Proiect
             this.tsXMLDes.Text = "XML Deserializare";
             this.tsXMLDes.Click += new System.EventHandler(this.tsXMLDes_Click);
             // 
+            // btnCopy
+            // 
+            this.btnCopy.Location = new System.Drawing.Point(27, 200);
+            this.btnCopy.Name = "btnCopy";
+            this.btnCopy.Size = new System.Drawing.Size(75, 23);
+            this.btnCopy.TabIndex = 11;
+            this.btnCopy.Text = "Copy";
+            this.btnCopy.UseVisualStyleBackColor = true;
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
+            // 
+            // btnPaste
+            // 
+            this.btnPaste.Location = new System.Drawing.Point(136, 200);
+            this.btnPaste.Name = "btnPaste";
+            this.btnPaste.Size = new System.Drawing.Size(75, 23);
+            this.btnPaste.TabIndex = 12;
+            this.btnPaste.Text = "Paste";
+            this.btnPaste.UseVisualStyleBackColor = true;
+            this.btnPaste.Click += new System.EventHandler(this.btnPaste_Click);
+            // 
             // FormMKFilm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 291);
             this.ContextMenuStrip = this.contextMenuStrip1;
+            this.Controls.Add(this.btnPaste);
+            this.Controls.Add(this.btnCopy);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
@@ -308,5 +335,7 @@ namespace Proiect
         private System.Windows.Forms.ToolStripButton tsXMLSer;
         private System.Windows.Forms.ToolStripButton tsByDes;
         private System.Windows.Forms.ToolStripButton tsXMLDes;
+        private System.Windows.Forms.Button btnPaste;
+        private System.Windows.Forms.Button btnCopy;
     }
 }
